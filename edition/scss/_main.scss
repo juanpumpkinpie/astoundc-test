@@ -1,0 +1,67 @@
+// mediaQuery , Mixings & bodyStyles
+@import "colors";
+
+//Titles Size and Color
+@mixin titles(){
+                font-size: 1.2rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: map-get($colors, blueShadow);
+}
+
+//Mixing Select Color Tshirt
+@mixin tshirt($color){
+                list-style: none;
+                width: 40px;
+                height: 40px;
+                background: map-get($colors, $color);
+                border-radius: 50%;
+                margin-right: 10px;
+
+                &:hover{
+                        cursor: pointer;
+                        -webkit-box-shadow: 0 2px 20px map-get($colors, dark);
+                        -moz-box-shadow: 0 2px 20px map-get($colors, dark);
+                        box-shadow: 0 2px 20px map-get($colors, dark); 
+                }
+}
+
+//Mixing slider button
+@mixin button(){
+    position: absolute;
+    bottom: 40%;
+    height: 50px;
+        &:hover{
+            cursor: pointer;
+        }
+}
+
+$breakpoints: (
+  phone: 402px,
+  tablet: 717px,
+  desktop: 934px
+);
+html{
+    font-size: 14px;
+}
+
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body{
+    font-size: 1rem;
+    background: map-get($colors, body);
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    font-family: 'Oswald', sans-serif;
+    color: map-get($colors, dark);
+    text-transform: uppercase;
+}
+.title{
+    font-family: 'Oswald', sans-serif;
+}
